@@ -11,5 +11,5 @@ public abstract class Day {
         in.close();
         input = new String(data);
     }
-    public abstract String calculate() throws Exception;
+    public abstract int calculate() throws Exception;
 }
