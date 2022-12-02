@@ -12,15 +12,27 @@ public class Day2 extends Day {
         int score = 0;
         for (String line : lines) {
             int opponent = line.charAt(0) - 'A';
-            int you = line.charAt(2) - 'X';
-            if (opponent == you) score += 3; // Draw
-            else {
-                opponent++;
-                if (opponent == you) score += 6; // Win
-             // else Nothing
-            }
-            score += you + 1; // Choice Score
+            // int you = line.charAt(2) - 'X'; - First Half
+            // Second Half
+            int state = line.charAt(2) - 'X' - 1;
+            int you = getShape(opponent, state);
+            //////////
+            score += rps(you, opponent) * 3 + 3;
+            score += you + 1;
         }
         return score;
+    }
+    public int getShape(int opponent, int state) {
+        opponent += state;
+        if (opponent < 0) opponent += 3;
+        if (opponent >= 3) opponent -= 3;
+        return opponent;
+    }
+    public int rps(int you, int opponent) {
+        if (you == opponent) return 0;
+        if (you == 0 && opponent == 2) return 1;
+        opponent++;
+        if (you == opponent) return 1;
+        else return -1;
     }
 }

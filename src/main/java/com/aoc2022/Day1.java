@@ -28,6 +28,8 @@ public class Day1 extends Day {
         }
         return max;
         */
+
+        // Second Half
         ArrayList<Integer> list = new ArrayList<>();
         for (int calorie : calories) {
             list.add(calorie);
