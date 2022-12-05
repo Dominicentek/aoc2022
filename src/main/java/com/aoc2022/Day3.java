@@ -4,7 +4,7 @@ public class Day3 extends Day {
     public Day3() throws Exception {
         super("day3.txt");
     }
-    public int calculate() throws Exception {
+    public String calculate() throws Exception {
         String[] rucksacks = input.split("\n");
         /*
         First Half
@@ -43,6 +43,6 @@ public class Day3 extends Day {
             x++;
             sum += x;
         }
-        return sum;
+        return "" + sum;
     }
 }

@@ -7,7 +7,7 @@ public class Day2 extends Day {
     public Day2() throws Exception {
         super("day2.txt");
     }
-    public int calculate() throws Exception {
+    public String calculate() throws Exception {
         String[] lines = input.split("\n");
         int score = 0;
         for (String line : lines) {
@@ -20,7 +20,7 @@ public class Day2 extends Day {
             score += rps(you, opponent) * 3 + 3;
             score += you + 1;
         }
-        return score;
+        return "" + score;
     }
     public int getShape(int opponent, int state) {
         opponent += state;

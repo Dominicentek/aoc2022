@@ -7,7 +7,7 @@ public class Day1 extends Day {
     public Day1() throws Exception {
         super("day1.txt");
     }
-    public int calculate() throws Exception {
+    public String calculate() throws Exception {
         String[] elves = input.split("\n\n");
         int[] calories = new int[elves.length];
         for (int i = 0; i < elves.length; i++) {
@@ -26,7 +26,7 @@ public class Day1 extends Day {
         for (int calorie : calories) {
             if (max < calorie) max = calorie;
         }
-        return max;
+        return "" + max;
         */
 
         // Second Half
@@ -36,6 +36,6 @@ public class Day1 extends Day {
         }
         Collections.sort(list);
         Collections.reverse(list);
-        return list.get(0) + list.get(1) + list.get(2);
+        return "" + (list.get(0) + list.get(1) + list.get(2));
     }
 }
