@@ -6,6 +6,7 @@ public class Main {
         // System.out.println("Day 2: " + new Day2().calculate());
         // System.out.println("Day 3: " + new Day3().calculate());
         // System.out.println("Day 4: " + new Day4().calculate());
-        System.out.println("Day 5: " + new Day5().calculate());
+        // System.out.println("Day 5: " + new Day5().calculate());
+        System.out.println("Day 6: " + new Day6().calculate());
     }
 }
