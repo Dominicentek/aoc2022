@@ -11,5 +11,8 @@ public abstract class Day {
         in.close();
         input = new String(data);
     }
-    public abstract String calculate() throws Exception;
+    public final String calculate() throws Exception {
+        return "(first: " + calculate(false) + ", second: " + calculate(true) + ")";
+    }
+    public abstract String calculate(boolean secondHalf) throws Exception;
 }

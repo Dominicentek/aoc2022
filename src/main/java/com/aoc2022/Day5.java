@@ -8,7 +8,7 @@ public class Day5 extends Day {
     public Day5() throws Exception {
         super("day5.txt");
     }
-    public String calculate() throws Exception {
+    public String calculate(boolean secondHalf) throws Exception {
         String[] lines = input.split("\n");
         int index = 0;
         for (int i = 0; i < lines.length; i++) {
@@ -52,22 +52,20 @@ public class Day5 extends Day {
             char to = args[2].charAt(0);
             Stack<Character> src = crateStacks.get(from);
             Stack<Character> dst = crateStacks.get(to);
-            /*
-            First Half
-
-            for (int j = 0; j < amount; j++) {
-                dst.push(src.pop());
+            if (secondHalf) {
+                Stack<Character> grabbed = new Stack<>();
+                for (int j = 0; j < amount; j++) {
+                    grabbed.push(src.pop());
+                }
+                for (int j = 0; j < amount; j++) {
+                    dst.push(grabbed.pop());
+                }
             }
-            */
-            // Second Half
-            Stack<Character> grabbed = new Stack<>();
-            for (int j = 0; j < amount; j++) {
-                grabbed.push(src.pop());
+            else {
+                for (int j = 0; j < amount; j++) {
+                    dst.push(src.pop());
+                }
             }
-            for (int j = 0; j < amount; j++) {
-                dst.push(grabbed.pop());
-            }
-            //////////
         }
         String topItems = "";
         for (char label : crateStacks.keySet()) {

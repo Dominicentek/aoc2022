@@ -7,7 +7,7 @@ public class Day4 extends Day {
     public Day4() throws Exception {
         super("day4.txt");
     }
-    public String calculate() throws Exception {
+    public String calculate(boolean secondHalf) throws Exception {
         String[] lines = input.split("\n");
         ArrayList<RangePair> pairs = new ArrayList<>();
         for (String line : lines) {
@@ -19,7 +19,7 @@ public class Day4 extends Day {
             if (pair.containsOther()) contains++;
             if (pair.intersect()) intersects++;
         }
-        return /* (First Half) "" + contains */ "" + intersects;
+        return "" + (secondHalf ? intersects : contains);
     }
     public static class Range {
         public int max;
