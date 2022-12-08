@@ -9,5 +9,6 @@ public class Main {
         System.out.println("Day 5: " + new Day5().calculate());
         System.out.println("Day 6: " + new Day6().calculate());
         System.out.println("Day 7: " + new Day7().calculate());
+        System.out.println("Day 8: " + new Day8().calculate());
     }
 }
