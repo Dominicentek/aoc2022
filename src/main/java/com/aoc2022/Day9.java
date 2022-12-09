@@ -16,7 +16,7 @@ public class Day9 extends Day {
     public BufferedImage imgPath;
     public BufferedImage imgSnake;
     public boolean init = false;
-    public static final boolean VISUALIZE = true; // i made this for debugging purposes but it was so cool that i decided to keep it
+    public static final boolean VISUALIZE = false; // i made this for debugging purposes but it was so cool that i decided to keep it
     public Day9() throws Exception {
         super("day9.txt");
     }
