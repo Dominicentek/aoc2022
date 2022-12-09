@@ -68,7 +68,7 @@ public class Day9 extends Day {
                 }
             }
         }
-        Thread.sleep(5000);
+        if (VISUALIZE) Thread.sleep(5000);
         return "" + visitedSpots.size();
     }
     public void initVisualization() {
