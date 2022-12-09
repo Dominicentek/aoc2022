@@ -16,6 +16,7 @@ public class Day9 extends Day {
     public BufferedImage imgPath;
     public BufferedImage imgSnake;
     public boolean init = false;
+    public long time = System.currentTimeMillis();
     public static final boolean VISUALIZE = false; // i made this for debugging purposes but it was so cool that i decided to keep it
     public Day9() throws Exception {
         super("day9.txt");
@@ -25,7 +26,7 @@ public class Day9 extends Day {
         String[] lines = input.split("\n");
         ArrayList<Point> visitedSpots = new ArrayList<>();
         ArrayList<Point> body = new ArrayList<>();
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < (secondHalf ? 10 : 2); i++) {
             body.add(new Point(220, 299));
         }
         int maxSteps = 0;
@@ -63,7 +64,8 @@ public class Day9 extends Day {
                     visitedSpots.add(tail);
                 }
                 if (VISUALIZE) {
-                    Thread.sleep(10);
+                    Thread.sleep(Math.max(0, 10 - System.currentTimeMillis() + time));
+                    time = System.currentTimeMillis();
                     visualize(body, step, maxSteps, instruction, steps - i);
                 }
             }
@@ -89,7 +91,6 @@ public class Day9 extends Day {
             });
             frame.setResizable(false);
             frame.setVisible(true);
-            new Scanner(System.in).nextLine();
         }
         init = true;
     }
