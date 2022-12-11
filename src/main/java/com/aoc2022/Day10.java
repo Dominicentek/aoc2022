@@ -8,7 +8,7 @@ import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
 public class Day10 extends Day {
-    public static final boolean VISUALIZE = true; // yeah, i visualize again
+    public static final boolean VISUALIZE = false; // yeah, i visualize again
     public static JFrame frame;
     public static BufferedImage img;
     public static Graphics g;
