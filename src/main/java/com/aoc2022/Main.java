@@ -16,5 +16,6 @@ public class Main {
         System.out.println("Day 10: " + new Day10().calculate());
         // System.out.println("Day 11: " + new Day11().calculate());
         System.out.println("Day 12: " + new Day12().calculate());
+        System.out.println("Day 13: " + new Day13().calculate());
     }
 }
